@@ -33,6 +33,10 @@ contract Organization {
         uint256 indexed tokenId
     );
 
+    event deleteResource(
+        address indexed resourceContract,
+        uint256 indexed tokenId
+    );
 
     function addResource(
         address resourceContract,
@@ -74,5 +78,12 @@ contract Organization {
        }
 
        return cards;
+   }
+
+   function remove(uint256 resourceContract) public returns(bool) {
+    //    remove from mapping 
+    //  and burn the token
+
+
    }
 }

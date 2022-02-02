@@ -4,6 +4,7 @@ pragma solidity ^0.8.0;
 import "@openzeppelin/contracts/utils/Counters.sol";
 import "@openzeppelin/contracts/token/ERC721/extensions/ERC721URIStorage.sol";
 import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
+import "@openzeppelin/contracts/token/ERC721/extensions/ERC721Burnable.sol";
 
 
 contract NameCard is ERC721URIStorage {
@@ -27,4 +28,7 @@ contract NameCard is ERC721URIStorage {
         return newItem;
     }
 
+    function burn(uint256 tokenId) public {
+        _burn(tokenId);
+    }
 }
